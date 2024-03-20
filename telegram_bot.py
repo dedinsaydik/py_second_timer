@@ -3,7 +3,7 @@ import ptbot
 import os
 from pytimeparse import parse
 
-load_dotenv()
+
 TG_TOKEN = os.getenv('TG_TOKEN')
 TG_CHAT_ID = os.getenv('TG_CHAT_ID')
 
@@ -39,6 +39,7 @@ def choose(chat_id):
 
 
 if __name__ == '__main__':
+    load_dotenv()
     bot = ptbot.Bot(TG_TOKEN)
     bot.reply_on_message(wait)
     bot.run_bot()
