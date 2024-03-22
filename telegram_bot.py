@@ -4,10 +4,6 @@ import os
 from pytimeparse import parse
 
 
-TG_TOKEN = os.getenv('TG_TOKEN')
-TG_CHAT_ID = os.getenv('TG_CHAT_ID')
-
-
 def wait(chat_id, text):
     time = parse(text)
     bot_message = bot.send_message(chat_id, f"Осталось cекунд: {time}")
@@ -40,6 +36,8 @@ def choose(chat_id):
 
 if __name__ == '__main__':
     load_dotenv()
+    TG_TOKEN = os.getenv('TG_TOKEN')
+    TG_CHAT_ID = os.getenv('TG_CHAT_ID')
     bot = ptbot.Bot(TG_TOKEN)
     bot.reply_on_message(wait)
     bot.run_bot()
