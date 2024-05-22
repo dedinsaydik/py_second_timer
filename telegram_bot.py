@@ -36,8 +36,8 @@ def choose(chat_id):
 
 if __name__ == '__main__':
     load_dotenv()
-    TG_TOKEN = os.getenv('TG_TOKEN')
-    TG_CHAT_ID = os.getenv('TG_CHAT_ID')
-    bot = ptbot.Bot(TG_TOKEN)
+    tg_token = os.getenv('TG_TOKEN')
+    tg_chat_id = os.getenv('TG_CHAT_ID')
+    bot = ptbot.Bot(tg_token)
     bot.reply_on_message(wait)
     bot.run_bot()
